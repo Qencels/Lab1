@@ -175,7 +175,7 @@ public:
 
 		while (current_node) {
 			Node<type>* next_node = current_node->next_ptr;
-			delete current_node;
+			current_node = nullptr;
 			current_node = next_node;
 		}
 		head_node = nullptr;

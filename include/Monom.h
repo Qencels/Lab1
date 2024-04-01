@@ -39,6 +39,18 @@ public:
         return Monom<type>(this->coef - obj.coef, this->vars);
     }
 
+    bool operator==(const Monom<type>& obj) {
+        if (coef != obj.coef) return false;
+        if (vars != obj.vars) return false;
+        return true;
+    }
+
+    bool operator!=(const Monom<type>& obj) {
+        if (coef == obj.coef) return false;
+        if (vars == obj.vars) return false;
+        return true;
+    }
+
     Monom<type> operator*(const Monom& obj) const {
         Monom<type> res = *this;
         res.coef *= obj.coef;
